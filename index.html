@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="rx-example">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="app.css" rel="stylesheet">
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/rx/dist/rx.all.min.js"></script>
+    <script src="node_modules/rx-angular/dist/rx.angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+
+<div ng-controller="MyController" style="zoom:2">
+    <div class="boxes">
+        <div class="box" ng-repeat="group in groups">
+            <ul>
+                <li ng-repeat="item in group  track by item.id" ng-class="{selected:item.checked}">
+                    <input type="checkbox" ng-click="click(item)">
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <input type="text" ng-model="title" ng-change="change(title)">
+    <button ng-click="save()" ng-disabled="!canSave()">save</button>
+    <h6 ng-if="result">result:</h6>
+    <pre style="font-size: 8px">{{result | json}}</pre>
+</div>
+
+</body>
+</html>

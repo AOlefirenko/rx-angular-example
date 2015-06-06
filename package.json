@@ -1,0 +1,16 @@
+{
+  "name": "rx-angular-seed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.3.16",
+    "rx": "^2.5.3",
+    "rx-angular": "0.0.14"
+  }
+}
