@@ -1,0 +1,17 @@
+<div class="container" ng-controller="AppController">
+    <div class="content">
+        <div ng-include="'intro'" ng-if="currentSlide === 1"></div>
+        <div ng-include="'mantra'" ng-if="currentSlide === 2"></div>
+        <div ng-include="'streams'" ng-if="currentSlide === 3"></div>
+        <div ng-include="'finish'" ng-if="currentSlide === 4"></div>
+    </div>
+    <div class="guide" ng-hide="state.isHidden">
+        <div class="guide__step" ng-repeat="step in steps track by step.id"
+             ng-class="{'guide__step--active':step.isCurrent}">
+            <div class="guide__step-content">
+                <a href="#" ng-click="onNext()" ng-if="!step.isLast">next</a>
+                <a href="" ng-if="step.isLast" ng-click="$event.preventDefault();state.isHidden=true">close</a>
+            </div>
+        </div>
+    </div>
+</div>
